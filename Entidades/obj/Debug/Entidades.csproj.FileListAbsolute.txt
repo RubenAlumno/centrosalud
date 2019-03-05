@@ -1,0 +1,16 @@
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\Entidades.dll
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\Entidades.pdb
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\MySql.Data.dll
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\MySql.Data.xml
+C:\Users\lasat\source\repos\CentroSalud\Entidades\bin\Debug\MySql.Data.Entity.EF6.xml
+C:\Users\lasat\source\repos\CentroSalud\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\lasat\source\repos\CentroSalud\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\lasat\source\repos\CentroSalud\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\lasat\source\repos\CentroSalud\Entidades\obj\Debug\Entidades.dll
+C:\Users\lasat\source\repos\CentroSalud\Entidades\obj\Debug\Entidades.pdb

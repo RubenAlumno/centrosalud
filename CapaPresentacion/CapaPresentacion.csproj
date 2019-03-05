@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2933768D-3C9F-4003-A28E-081534A2E950}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.10.8\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.10.8\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmAddEspecialidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddEspecialidad.Designer.cs">
+      <DependentUpon>FrmAddEspecialidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarCitasPorMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarCitasPorMedico.Designer.cs">
+      <DependentUpon>FrmBuscarCitasPorMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarCitasPorPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarCitasPorPaciente.Designer.cs">
+      <DependentUpon>FrmBuscarCitasPorPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarMedicoPorID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarMedicoPorID.Designer.cs">
+      <DependentUpon>FrmBuscarMedicoPorID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarMedicoPorNombre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarMedicoPorNombre.Designer.cs">
+      <DependentUpon>FrmBuscarMedicoPorNombre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarPacientePorID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarPacientePorID.Designer.cs">
+      <DependentUpon>FrmBuscarPacientePorID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarPacientePorNombre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarPacientePorNombre.Designer.cs">
+      <DependentUpon>FrmBuscarPacientePorNombre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCrearCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCrearCita.Designer.cs">
+      <DependentUpon>FrmCrearCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCrearEspecialidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCrearEspecialidad.Designer.cs">
+      <DependentUpon>FrmCrearEspecialidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCrearMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCrearMedico.Designer.cs">
+      <DependentUpon>FrmCrearMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCrearPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCrearPaciente.Designer.cs">
+      <DependentUpon>FrmCrearPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEliminarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEliminarCita.Designer.cs">
+      <DependentUpon>FrmEliminarCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarEspecialidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarEspecialidad.Designer.cs">
+      <DependentUpon>FrmModificarEspecialidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarMedico.Designer.cs">
+      <DependentUpon>FrmModificarMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarPaciente.Designer.cs">
+      <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAddEspecialidad.resx">
+      <DependentUpon>FrmAddEspecialidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarCitasPorMedico.resx">
+      <DependentUpon>FrmBuscarCitasPorMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarCitasPorPaciente.resx">
+      <DependentUpon>FrmBuscarCitasPorPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarMedicoPorID.resx">
+      <DependentUpon>FrmBuscarMedicoPorID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarMedicoPorNombre.resx">
+      <DependentUpon>FrmBuscarMedicoPorNombre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarPacientePorID.resx">
+      <DependentUpon>FrmBuscarPacientePorID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarPacientePorNombre.resx">
+      <DependentUpon>FrmBuscarPacientePorNombre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCrearCita.resx">
+      <DependentUpon>FrmCrearCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCrearEspecialidad.resx">
+      <DependentUpon>FrmCrearEspecialidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearMedico.resx">
+      <DependentUpon>FrmCrearMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCrearPaciente.resx">
+      <DependentUpon>FrmCrearPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEliminarCita.resx">
+      <DependentUpon>FrmEliminarCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarEspecialidad.resx">
+      <DependentUpon>FrmModificarEspecialidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarMedico.resx">
+      <DependentUpon>FrmModificarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarPaciente.resx">
+      <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{23097EFE-3F9D-40B7-B990-E09862013FC6}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{09DB009B-CAE7-4569-86BB-1C90998D8BA7}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

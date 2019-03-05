@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="centrosaludModelStoreContainer" CdmEntityContainer="centrosaludEntities">
+    <EntitySetMapping Name="citas">
+      <EntityTypeMapping TypeName="centrosaludModel.cita">
+        <MappingFragment StoreEntitySet="citas">
+          <ScalarProperty Name="idpaciente" ColumnName="idpaciente" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="idcita" ColumnName="idcita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="especialidads">
+      <EntityTypeMapping TypeName="centrosaludModel.especialidad">
+        <MappingFragment StoreEntitySet="especialidad">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="especialistas">
+      <EntityTypeMapping TypeName="centrosaludModel.especialista">
+        <MappingFragment StoreEntitySet="especialistas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="especialistashacenespecialidades">
+      <EntityTypeMapping TypeName="centrosaludModel.especialistashacenespecialidade">
+        <MappingFragment StoreEntitySet="especialistashacenespecialidades">
+          <ScalarProperty Name="idespecialidad" ColumnName="idespecialidad" />
+          <ScalarProperty Name="idespecialista" ColumnName="idespecialista" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pacientes">
+      <EntityTypeMapping TypeName="centrosaludModel.paciente">
+        <MappingFragment StoreEntitySet="pacientes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="localidad" ColumnName="localidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

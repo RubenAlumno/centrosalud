@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="centrosaludModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cita">
+    <Key>
+      <PropertyRef Name="idpaciente" />
+      <PropertyRef Name="fecha" />
+      <PropertyRef Name="hora" />
+      <PropertyRef Name="idcita" />
+    </Key>
+    <Property Name="idpaciente" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" />
+    <Property Name="hora" Type="Time" Nullable="false" />
+    <Property Name="idcita" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="paciente" Relationship="Self.citas_ibfk_1" FromRole="citas" ToRole="pacientes" />
+    <NavigationProperty Name="especialistashacenespecialidade" Relationship="Self.citas_ibfk_2" FromRole="citas" ToRole="especialistashacenespecialidades" />
+  </EntityType>
+  <EntityType Name="especialidad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="especialistashacenespecialidades" Relationship="Self.especialistashacenespecialidades_ibfk_2" FromRole="especialidad" ToRole="especialistashacenespecialidades" />
+  </EntityType>
+  <EntityType Name="especialista">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="especialistashacenespecialidades" Relationship="Self.especialistashacenespecialidades_ibfk_1" FromRole="especialistas" ToRole="especialistashacenespecialidades" />
+  </EntityType>
+  <EntityType Name="especialistashacenespecialidade">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="idespecialidad" Type="Int32" Nullable="false" />
+    <Property Name="idespecialista" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="citas" Relationship="Self.citas_ibfk_2" FromRole="especialistashacenespecialidades" ToRole="citas" />
+    <NavigationProperty Name="especialidad" Relationship="Self.especialistashacenespecialidades_ibfk_2" FromRole="especialistashacenespecialidades" ToRole="especialidad" />
+    <NavigationProperty Name="especialista" Relationship="Self.especialistashacenespecialidades_ibfk_1" FromRole="especialistashacenespecialidades" ToRole="especialistas" />
+  </EntityType>
+  <EntityType Name="paciente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="localidad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="citas" Relationship="Self.citas_ibfk_1" FromRole="pacientes" ToRole="citas" />
+  </EntityType>
+  <Association Name="citas_ibfk_1">
+    <End Role="pacientes" Type="Self.paciente" Multiplicity="1" />
+    <End Role="citas" Type="Self.cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pacientes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="citas">
+        <PropertyRef Name="idpaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="citas_ibfk_2">
+    <End Role="especialistashacenespecialidades" Type="Self.especialistashacenespecialidade" Multiplicity="1" />
+    <End Role="citas" Type="Self.cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="especialistashacenespecialidades">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="citas">
+        <PropertyRef Name="idcita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="especialistashacenespecialidades_ibfk_2">
+    <End Role="especialidad" Type="Self.especialidad" Multiplicity="1" />
+    <End Role="especialistashacenespecialidades" Type="Self.especialistashacenespecialidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="especialidad">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="especialistashacenespecialidades">
+        <PropertyRef Name="idespecialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="especialistashacenespecialidades_ibfk_1">
+    <End Role="especialistas" Type="Self.especialista" Multiplicity="1" />
+    <End Role="especialistashacenespecialidades" Type="Self.especialistashacenespecialidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="especialistas">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="especialistashacenespecialidades">
+        <PropertyRef Name="idespecialista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="centrosaludEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="citas" EntityType="Self.cita" />
+    <EntitySet Name="especialidads" EntityType="Self.especialidad" />
+    <EntitySet Name="especialistas" EntityType="Self.especialista" />
+    <EntitySet Name="especialistashacenespecialidades" EntityType="Self.especialistashacenespecialidade" />
+    <EntitySet Name="pacientes" EntityType="Self.paciente" />
+    <AssociationSet Name="citas_ibfk_1" Association="Self.citas_ibfk_1">
+      <End Role="pacientes" EntitySet="pacientes" />
+      <End Role="citas" EntitySet="citas" />
+    </AssociationSet>
+    <AssociationSet Name="citas_ibfk_2" Association="Self.citas_ibfk_2">
+      <End Role="especialistashacenespecialidades" EntitySet="especialistashacenespecialidades" />
+      <End Role="citas" EntitySet="citas" />
+    </AssociationSet>
+    <AssociationSet Name="especialistashacenespecialidades_ibfk_2" Association="Self.especialistashacenespecialidades_ibfk_2">
+      <End Role="especialidad" EntitySet="especialidads" />
+      <End Role="especialistashacenespecialidades" EntitySet="especialistashacenespecialidades" />
+    </AssociationSet>
+    <AssociationSet Name="especialistashacenespecialidades_ibfk_1" Association="Self.especialistashacenespecialidades_ibfk_1">
+      <End Role="especialistas" EntitySet="especialistas" />
+      <End Role="especialistashacenespecialidades" EntitySet="especialistashacenespecialidades" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
